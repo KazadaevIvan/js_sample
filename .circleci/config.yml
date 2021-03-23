@@ -7,16 +7,11 @@ jobs:
       - checkout
       - run:
           name: Install npm dependencies
-          comand: |
-          npm install --save
+          command: npm install --save
       - run:
           name: Run tests
-          comand: |
-          node ./node_modules/@wdio/cli/bin/wdio.js
+          command: node ./node_modules/@wdio/cli/bin/wdio.js
 workflows:
   build_test:
     jobs:
       - run_tests
-
-
-
