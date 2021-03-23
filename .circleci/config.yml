@@ -10,7 +10,7 @@ jobs:
           command: npm install --save
       - run:
           name: Run tests
-          command: node ./node_modules/@wdio/cli/bin/wdio.js
+          command: node_modules/.bin/wdio wdio.conf.js
 workflows:
   build_test:
     jobs:
