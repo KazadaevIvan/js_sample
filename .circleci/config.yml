@@ -4,7 +4,10 @@ orbs:
 jobs:
   run-tests:
     docker:
-      - image: circleci/node:10-browsers
+      - image: circleci/node:latest-browsers
+        environment:
+          ## this enables colors in the output
+          TERM: xterm
     steps:
       - checkout
       # Make `allure` command available by installing dependencies from `ayte` orb
