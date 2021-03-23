@@ -6,8 +6,8 @@ jobs:
     docker:
       - image: circleci/node:latest-browsers
         environment:
-        # this enables colors in the output
-        TERM: xterm
+          # this enables colors in the output
+          TERM: xterm
     steps:
       - checkout
       # Make `allure` command available by installing dependencies from `ayte` orb
@@ -35,6 +35,6 @@ jobs:
       - store_test_results:
           path: allure-results
 workflows:
-  test:
+  build_test:
     jobs:
       - run-tests
