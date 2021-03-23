@@ -33,7 +33,7 @@ jobs:
           # Run command from orb more info https://github.com/ayte-io/circle-ci-orb-allure
           command: allure generate
       - store_test_results:
-          path: ./allure-results
+          path: allure-results
 workflows:
   build_test:
     jobs:
