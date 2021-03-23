@@ -1,0 +1,11 @@
+[
+    {
+        "firstNumber": "8",
+        "secondNumber": "3",
+        "additionResult": "11",
+        "subtractionResult": "5",
+        "multiplicationResult": "24",
+        "divisionResult": "2.6666666666666665",
+        "concatenationResult": "83" 
+    }
+]
