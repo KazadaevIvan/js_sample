@@ -1,7 +1,22 @@
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
+jobs:
+  run-tests:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - run:
+          name: Install npm dependencies
+          comand: |
+          npm install --save
+      - run:
+          name: Run tests
+          comand: |
+          node ./node_modules/@wdio/cli/bin/wdio.js
 workflows:
-  node-tests:
+  build_test:
     jobs:
-      - node/test
+      - run_tests
+
+
+
