@@ -27,7 +27,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run:
           name: Run tests
-          command: node_modules/.bin/wdio wdio.conf.js
+          command: node ./node_modules/@wdio/cli/bin/wdio.js
       - run:
           name: Generate Allure Report
           # Run command from orb more info https://github.com/ayte-io/circle-ci-orb-allure
