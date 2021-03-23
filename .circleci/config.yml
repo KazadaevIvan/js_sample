@@ -21,6 +21,11 @@ jobs:
       - run:
           name: Run tests
           command: node_modules/.bin/wdio wdio.conf.js
+      - run:
+          name: Generate Allure Report
+          command: allure generate allure-results
+      - store_test_results:
+          path: ./allure-results
 workflows:
   build_test:
     jobs:
