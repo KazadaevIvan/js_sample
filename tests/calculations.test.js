@@ -7,7 +7,7 @@ describe('Calculations', () => {
         values.forEach(values => {
             it(`Addition of ${values.firstNumber} and ${values.secondNumber} should be equal to ${values.additionResult}`, () => {
                 mainPage.open()
-                        .chooseBuild('Prototype')
+                        //.chooseBuild('Prototype')
                         .setFirstNumber(values.firstNumber)
                         .setSecondNumber(values.secondNumber)
                         .chooseOperation('Add')
