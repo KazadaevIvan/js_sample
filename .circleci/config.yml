@@ -4,7 +4,7 @@ orbs:
 jobs:
   run-tests:
     docker:
-      - image: circleci/node:latest-browsers
+      - image: circleci/node:10-browsers
         environment:
           # this enables colors in the output
           TERM: xterm
