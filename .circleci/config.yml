@@ -1,7 +1,43 @@
 version: 2.1
 orbs:
-  node: circleci/node@3.0.0
+  allure: ayte/allure@0.1.3
+jobs:
+  run-tests:
+    docker:
+      - image: circleci/node:10-browsers
+        environment:
+          # this enables colors in the output
+          TERM: xterm
+    steps:
+      - checkout
+      # Make `allure` command available by installing dependencies from `ayte` orb
+      - allure/install
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+      - run:
+          name: Install npm dependencies
+          command: npm install --save
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run:
+          name: Run tests
+          command: node ./node_modules/@wdio/cli/bin/wdio.js
+      - run:
+          name: Generate Allure Report
+          when: always
+          # Run command from orb more info https://github.com/ayte-io/circle-ci-orb-allure
+          command: allure generate allure-results
+      - store_test_results:
+          path: ./
+      - store_artifacts:
+          path: allure-report
 workflows:
-  node-tests:
+  ui-tests:
     jobs:
-      - node/test
+      - run-tests
