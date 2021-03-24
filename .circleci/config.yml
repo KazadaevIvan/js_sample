@@ -30,9 +30,10 @@ jobs:
           command: node ./node_modules/@wdio/cli/bin/wdio.js
       - run:
           name: Generate Allure Report
+          when: always
           # Run command from orb more info https://github.com/ayte-io/circle-ci-orb-allure
           command: allure generate allure-results
-      - store_test_results:
+      - store_artifacts:
           path: allure-results
 workflows:
   build_test:
