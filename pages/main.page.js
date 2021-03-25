@@ -16,6 +16,8 @@ class Main {
 
     get clearButton() { return $('#clearButton'); }
 
+    get errorMessage() { return $('#errorMsgField'); }
+
     open() {
         browser.url('/BasicCalculator.html');
         return this;
@@ -54,6 +56,11 @@ class Main {
     getAnswer() {
         this.answerField.waitForDisplayed();
         return this.answerField.getAttribute('value');
+    }
+
+    getErrorMessageText() {
+        this.errorMessage.waitForDisplayed();
+        return this.errorMessage.getAttribute('value')
     }
 }
 
