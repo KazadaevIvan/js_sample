@@ -7,5 +7,68 @@
         "multiplicationResult": "24",
         "divisionResult": "2.6666666666666665",
         "concatenationResult": "83" 
+    },
+    {
+        "firstNumber": "-8",
+        "secondNumber": "3",
+        "additionResult": "-5",
+        "subtractionResult": "-11",
+        "multiplicationResult": "-24",
+        "divisionResult": "-2.6666666666666665",
+        "concatenationResult": "-83" 
+    },
+    {
+        "firstNumber": "8",
+        "secondNumber": "-3",
+        "additionResult": "5",
+        "subtractionResult": "11",
+        "multiplicationResult": "-24",
+        "divisionResult": "-2.6666666666666665",
+        "concatenationResult": "8-3" 
+    },
+    {
+        "firstNumber": "5.3",
+        "secondNumber": "3",
+        "additionResult": "8.3",
+        "subtractionResult": "2.3",
+        "multiplicationResult": "15.899999999999999",
+        "divisionResult": "1.7666666666666666",
+        "concatenationResult": "5.33" 
+    },
+    {
+        "firstNumber": "4",
+        "secondNumber": "7.2",
+        "additionResult": "11.2",
+        "subtractionResult": "-3.2",
+        "multiplicationResult": "28.8",
+        "divisionResult": "0.5555555555555556",
+        "concatenationResult": "47.2" 
+    },
+    {
+        "firstNumber": "-2",
+        "secondNumber": "-5",
+        "additionResult": "-7",
+        "subtractionResult": "3",
+        "multiplicationResult": "10",
+        "divisionResult": "0.4",
+        "concatenationResult": "-2-5" 
+    },
+    {
+        "firstNumber": "4.3",
+        "secondNumber": "1.7",
+        "additionResult": "6",
+        "subtractionResult": "2.5999999999999996",
+        "multiplicationResult": "7.31",
+        "divisionResult": "2.5294117647058822",
+        "concatenationResult": "4.31.7" 
+    },
+    {
+        "firstNumber": "0",
+        "secondNumber": "6",
+        "additionResult": "6",
+        "subtractionResult": "-6",
+        "multiplicationResult": "0",
+        "divisionResult": "0",
+        "concatenationResult": "06" 
     }
 ]
