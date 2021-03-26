@@ -18,8 +18,8 @@ describe('Calculations', () => {
             it(`Subtraction of ${values.firstNumber} and ${values.secondNumber} should be equal to ${values.subtractionResult}`, () => {
                 mainPage.open()
                         .chooseBuild('Prototype')
-                        .setFirstNumber(8)
-                        .setSecondNumber(3)
+                        .setFirstNumber(values.firstNumber)
+                        .setSecondNumber(values.secondNumber)
                         .chooseOperation('Subtract')
                         .clickCalculateButton();
                 assert.equal(values.subtractionResult, mainPage.getAnswer(), `Result should be ${values.subtractionResult}`);
@@ -28,8 +28,8 @@ describe('Calculations', () => {
             it(`Multiplication of ${values.firstNumber} and ${values.secondNumber} should be equal to ${values.multiplicationResult}`, () => {
                 mainPage.open()
                         .chooseBuild('Prototype')
-                        .setFirstNumber(8)
-                        .setSecondNumber(3)
+                        .setFirstNumber(values.firstNumber)
+                        .setSecondNumber(values.secondNumber)
                         .chooseOperation('Multiply')
                         .clickCalculateButton();
                 assert.equal(values.multiplicationResult, mainPage.getAnswer(), `Result should be ${values.multiplicationResult}`);
@@ -38,8 +38,8 @@ describe('Calculations', () => {
             it(`Division of ${values.firstNumber} and ${values.secondNumber} should be equal to ${values.divisionResult}`, () => {
                 mainPage.open()
                         .chooseBuild('Prototype')
-                        .setFirstNumber(8)
-                        .setSecondNumber(3)
+                        .setFirstNumber(values.firstNumber)
+                        .setSecondNumber(values.secondNumber)
                         .chooseOperation('Divide')
                         .clickCalculateButton();
                 assert.equal(values.divisionResult, mainPage.getAnswer(), `Result should be ${values.divisionResult}`);
@@ -48,12 +48,22 @@ describe('Calculations', () => {
             it(`Concatenation of ${values.firstNumber} and ${values.secondNumber} should be equal to ${values.concatenationResult}`, () => {
                 mainPage.open()
                         .chooseBuild('Prototype')
-                        .setFirstNumber(8)
-                        .setSecondNumber(3)
+                        .setFirstNumber(values.firstNumber)
+                        .setSecondNumber(values.secondNumber)
                         .chooseOperation('Concatenate')
                         .clickCalculateButton();
                 assert.equal(values.concatenationResult, mainPage.getAnswer(), `Result should be ${values.concatenationResult}`);
             });
         });
+    });
+
+    it('When divide by zero error message should appear and say "Divide by zero error!"', () => {
+        mainPage.open()
+                .chooseBuild('Prototype')
+                .setFirstNumber(10)
+                .setSecondNumber(0)
+                .chooseOperation('Divide')
+                .clickCalculateButton();
+        assert.equal('Divide by zero error!', mainPage.getErrorMessageText());
     });
 });
