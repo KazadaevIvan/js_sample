@@ -60,7 +60,7 @@ class Main {
 
     getErrorMessageText() {
         this.errorMessage.waitForDisplayed();
-        return this.errorMessage.getAttribute('value')
+        return this.errorMessage.getText();
     }
 }
 
