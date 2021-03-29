@@ -1,0 +1,17 @@
+[
+    {
+        "firstNumber": "22",
+        "secondNumber": "0",
+        "errorMessage": "Divide by zero error!"
+    },
+    {
+        "firstNumber": "2,2",
+        "secondNumber": "7",
+        "errorMessage": "Number 1 is not a number"
+    },
+    {
+        "firstNumber": "7.8",
+        "secondNumber": "gh",
+        "errorMessage": "Number 2 is not a number"
+    }
+]
