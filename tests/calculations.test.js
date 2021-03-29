@@ -2,7 +2,6 @@ const mainPage = require('../pages/main.page');
 const values = require('../data/values.data.json')
 
 describe('Calculations', () => {
-
     context('Results validation', () => {
         values.forEach(values => {
             it(`Addition of ${values.firstNumber} and ${values.secondNumber} should be equal to ${values.additionResult}`, () => {
@@ -55,15 +54,5 @@ describe('Calculations', () => {
                 assert.equal(values.concatenationResult, mainPage.getAnswer(), `Result should be ${values.concatenationResult}`);
             });
         });
-    });
-
-    it('When divide by zero error message should appear and say "Divide by zero error!"', () => {
-        mainPage.open()
-                .chooseBuild('Prototype')
-                .setFirstNumber(10)
-                .setSecondNumber(0)
-                .chooseOperation('Divide')
-                .clickCalculateButton();
-        assert.equal('Divide by zero error!', mainPage.getErrorMessageText());
     });
 });
