@@ -55,7 +55,7 @@ class Main {
 
     getAnswer() {
         this.answerField.waitForDisplayed();
-        return this.answerField.getAttribute('value');
+        return this.answerField.getValue();
     }
 
     getErrorMessageText() {
