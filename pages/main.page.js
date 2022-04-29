@@ -18,49 +18,43 @@ class Main {
 
     get errorMessage() { return $('#errorMsgField'); }
 
-    open() {
-        browser.url('/BasicCalculator.html');
-        return this;
+    async open() {
+        await browser.url('/BasicCalculator.html');
     }
 
-    chooseBuild(value) {
-        this.buildNumberDropdown.waitForDisplayed();
-        this.buildNumberDropdown.selectByVisibleText(value);
-        return this;
+    async chooseBuild(value) {
+        await this.buildNumberDropdown.waitForDisplayed();
+        await this.buildNumberDropdown.selectByVisibleText(value);
     }
 
-    setFirstNumber(number) {
-        this.firstNumberField.waitForDisplayed();
-        this.firstNumberField.setValue(number);
-        return this;
+    async setFirstNumber(number) {
+        await this.firstNumberField.waitForDisplayed();
+        await this.firstNumberField.setValue(number);
     }
 
-    setSecondNumber(number) {
-        this.secondNumberField.waitForDisplayed();
-        this.secondNumberField.setValue(number);
-        return this;
+    async setSecondNumber(number) {
+        await this.secondNumberField.waitForDisplayed();
+        await this.secondNumberField.setValue(number);
     }
 
-    chooseOperation(operation) {
-        this.operationDropdown.waitForDisplayed();
-        this.operationDropdown.selectByVisibleText(operation);
-        return this;
+    async chooseOperation(operation) {
+        await this.operationDropdown.waitForDisplayed();
+        await this.operationDropdown.selectByVisibleText(operation);
     }
 
-    clickCalculateButton() {
-        this.calculateButton.waitForDisplayed();
-        this.calculateButton.click();
-        return this;
+    async clickCalculateButton() {
+        await this.calculateButton.waitForDisplayed();
+        await this.calculateButton.click();
     }
 
-    getAnswer() {
-        this.answerField.waitForDisplayed();
-        return this.answerField.getValue();
+    async getAnswer() {
+        await this.answerField.waitForDisplayed();
+        return await this.answerField.getValue();
     }
 
-    getErrorMessageText() {
-        this.errorMessage.waitForDisplayed();
-        return this.errorMessage.getText();
+    async getErrorMessageText() {
+        await this.errorMessage.waitForDisplayed();
+        return await this.errorMessage.getText();
     }
 }
 
