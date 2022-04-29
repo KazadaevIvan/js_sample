@@ -10,10 +10,8 @@ jobs:
           # this enables colors in the output
           TERM: xterm
     steps:
-      - browser-tools/install-chrome:
-          replace-existing: true
-      - browser-tools/install-chromedriver:
-          replace-existing: true
+      - browser-tools/replace-existing-chrome
+      - browser-tools/install-chromedriver
       - run:
           command: |
             google-chrome --version
