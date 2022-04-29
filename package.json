@@ -1,5 +1,5 @@
 {
-  "name": "sample",
+  "name": "Calculator",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/KazadaevIvan/js_sample.git"
   },
-  "author": "",
+  "author": "Ivan Kazadaev",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/KazadaevIvan/js_sample/issues"
@@ -25,7 +25,7 @@
     "@wdio/spec-reporter": "^7.19.5",
     "chai": "^4.3.4",
     "chai-webdriverio": "^1.0.0",
-    "chromedriver": "^99.0.0",
+    "chromedriver": "^100.0.0",
     "local-runner": "^0.1.1-alpha",
     "wdio-chromedriver-service": "^7.3.2",
     "webdriverio": "^7.2.2"
