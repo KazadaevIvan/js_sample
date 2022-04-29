@@ -3,10 +3,13 @@ const values = require('../data/values.data.json')
 
 describe('Calculations', () => {
     context('Results validation', () => {
+        beforeEach(async() => {
+            await mainPage.open();
+            await mainPage.chooseBuild('Prototype');
+        });
+        
         values.forEach(values => {
             it(`Addition of ${values.firstNumber} and ${values.secondNumber} should be equal to ${values.additionResult}`, async() => {
-                await mainPage.open();
-                await mainPage.chooseBuild('Prototype');
                 await mainPage.setFirstNumber(values.firstNumber);
                 await mainPage.setSecondNumber(values.secondNumber);
                 await mainPage.chooseOperation('Add');
@@ -15,8 +18,6 @@ describe('Calculations', () => {
             });
 
             it(`Subtraction of ${values.firstNumber} and ${values.secondNumber} should be equal to ${values.subtractionResult}`, async() => {
-                await mainPage.open();
-                await mainPage.chooseBuild('Prototype');
                 await mainPage.setFirstNumber(values.firstNumber);
                 await mainPage.setSecondNumber(values.secondNumber);
                 await mainPage.chooseOperation('Subtract');
@@ -25,8 +26,6 @@ describe('Calculations', () => {
             });
 
             it(`Multiplication of ${values.firstNumber} and ${values.secondNumber} should be equal to ${values.multiplicationResult}`, async() => {
-                await mainPage.open();
-                await mainPage.chooseBuild('Prototype');
                 await mainPage.setFirstNumber(values.firstNumber);
                 await mainPage.setSecondNumber(values.secondNumber);
                 await mainPage.chooseOperation('Multiply');
@@ -35,8 +34,6 @@ describe('Calculations', () => {
             });
 
             it(`Division of ${values.firstNumber} and ${values.secondNumber} should be equal to ${values.divisionResult}`, async() => {
-                await mainPage.open()
-                await mainPage.chooseBuild('Prototype');
                 await mainPage.setFirstNumber(values.firstNumber);
                 await mainPage.setSecondNumber(values.secondNumber);
                 await mainPage.chooseOperation('Divide');
@@ -45,8 +42,6 @@ describe('Calculations', () => {
             });
 
             it(`Concatenation of ${values.firstNumber} and ${values.secondNumber} should be equal to ${values.concatenationResult}`, async() => {
-                await mainPage.open()
-                await mainPage.chooseBuild('Prototype');
                 await mainPage.setFirstNumber(values.firstNumber);
                 await mainPage.setSecondNumber(values.secondNumber);
                 await mainPage.chooseOperation('Concatenate');
