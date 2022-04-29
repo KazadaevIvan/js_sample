@@ -11,15 +11,13 @@ jobs:
           TERM: xterm
     steps:
       - browser-tools/install-chrome
-        run:
-          name: Install Chromedriver latest version
+          replace-existing: true
+      - browser-tools/install-chromedriver
+      - run:
           command: |
-            sudo apt-get update
-            sudo apt-get install lsb-release libappindicator3-1
-            curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-            sudo dpkg -i google-chrome.deb
-            sudo sed -i 's|HERE/chrome"|HERE/chrome" --no-sandbox|g' /opt/google/chrome/google-chrome
-            rm google-chrome.deb
+            google-chrome --version
+            chromedriver --version
+          name: Check install
       - checkout
       # Make `allure` command available by installing dependencies from `ayte` orb
       - allure/install
