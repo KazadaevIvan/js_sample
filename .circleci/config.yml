@@ -10,6 +10,7 @@ jobs:
           # this enables colors in the output
           TERM: xterm
     steps:
+      - browser-tools/install-browser-tools
       - checkout
       # Make `allure` command available by installing dependencies from `ayte` orb
       - allure/install
