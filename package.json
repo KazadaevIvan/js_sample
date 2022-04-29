@@ -27,7 +27,7 @@
     "chai-webdriverio": "^1.0.0",
     "chromedriver": "^99.0.0",
     "local-runner": "^0.1.1-alpha",
-    "wdio-chromedriver-service": "^7.2.8",
+    "wdio-chromedriver-service": "7.2.8",
     "webdriverio": "^7.2.2"
   },
   "dependencies": {
