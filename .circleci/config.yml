@@ -10,7 +10,8 @@ jobs:
           # this enables colors in the output
           TERM: xterm
     steps:
-      - browser-tools/replace-existing-chrome
+      - browser-tools/install-browser-tools:
+          chrome-version: 99.0.4844.51
       - browser-tools/install-chromedriver
       - run:
           command: |
